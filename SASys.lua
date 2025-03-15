@@ -9,7 +9,7 @@
 --[[
     Initialization
 ]]--
-stopingAnimsList = {} -- List of animations incompatible with actionsСтандартная длина действий
+stopingAnimsList = {} -- List of animations incompatible with actions
 actionsList = {} -- List of actions lol
 actionButtonCommonColor = "§8" -- This color will indicate items in the action list
 actionButtonAccentColor = "§f" -- This color will indicate the selected action from the list of actions
