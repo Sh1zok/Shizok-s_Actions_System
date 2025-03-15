@@ -4,7 +4,7 @@
 Now I'll tell you what and how.
 
 # What is this?
-This is my avatar action management system [Figura mod](https://github.com/FiguraMC/Figura).
+This is my [Figura mod](https://github.com/FiguraMC/Figura) avatar action management system.
 
 # SASys.lua
 The script itself. It controls the actions described in config.lua, makes the code cleaner and more readable for the avatar developer and provides simple control of actions for the avatar user.
