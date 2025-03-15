@@ -13,4 +13,58 @@ The script itself. It controls the actions described in config.lua, makes the co
 This is where the script's localization and settings are stored, and actions and their animations are described.
 
 # How do I add this to my avatar?
-Writing...
+1. Download the [latest release](https://github.com/Sh1zok/Shizok-s_Actions_System/releases/tag/Public).
+2. Place SASys.lua in your avatar folder.
+3. In another file(config), initialize it with ```require("SASys")```
+4. Done.(●'◡'●)
+
+# How to configure SASys?
+## First of all, set up an action list
+Example:
+```
+actionsList = {
+    {"Action 1 name", animations.model.action1},
+    {"Action 2 name", animations.model.action2},
+    {"Action without animation", nil}
+}
+```
+
+## Add animations that are not compatible with action animations
+Example:
+```
+stopingAnimsList = {
+    animations.model.swimming,
+    animations.model.sprinting,
+    animations.model.crouching
+}
+```
+If animations from this list start playing, the current action will be terminated early to avoid incorrect intersection of animations.
+
+## Adjust the priorities and interpolation of action animation transitions.
+Example:
+```
+prioritizeActionAnimations(3) -- Now each animation will have a priority of 3
+blendActionAnimations(7.5) -- Now the transition between actions and idle state will be smooth (need GSAnimBlend)
+```
+
+## Customize the look.
+ИUse the game color code to change the common and accent color.
+### ![MC color codes](https://xenolith.ru/uploads/posts/2021-12/1640426692_bezymjannyj.jpg)
+Example:
+```
+actionButtonCommonColor = "§3"
+actionButtonAccentColor = "§f"
+```
+### Also change the localization to suit your needs
+Example:
+```
+actionButtonTitle = "AcTiOn ayo"
+actionButtonDescription = "U know what to do yup\n\n My cool actions:\n"
+```
+### Set the list size if you have too many actions.
+Example:
+```
+actionsListDescriptionSize = 5
+```
+## What does it look like now?
+![Demonstartion](https://github.com/Sh1zok/Shizok-s_Actions_System/blob/stable/Demonstration.png)
