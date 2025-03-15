@@ -12,6 +12,11 @@ The script itself. It controls the actions described in config.lua, makes the co
 # config.lua(any file of .lua format)
 This is where the script's localization and settings are stored, and actions and their animations are described.
 
+# How to use it?
+1. Hover over the action wheel button, scroll the mouse wheel and select your action from the list.
+2. Left-click to play the action.
+3. Right-click to stop the action.
+
 # How do I add this to my avatar?
 1. Download the [latest release](https://github.com/Sh1zok/Shizok-s_Actions_System/releases/tag/Public).
 2. Place SASys.lua in your avatar folder.
@@ -48,7 +53,7 @@ blendActionAnimations(7.5) -- Now the transition between actions and idle state 
 ```
 
 ## Customize the look.
-ИUse the game color code to change the common and accent color.
+Use the game color code to change the common and accent color.
 ### ![MC color codes](https://xenolith.ru/uploads/posts/2021-12/1640426692_bezymjannyj.jpg)
 Example:
 ```
@@ -68,3 +73,23 @@ actionsListDescriptionSize = 5
 ```
 ## What does it look like now?
 ![Demonstartion](https://github.com/Sh1zok/Shizok-s_Actions_System/blob/stable/Demonstration.png)
+
+# How do I add an action wheel button?
+Example:
+```
+actions = newPage:newAction()
+    :title(updateActionButtonTitle())
+    :item("minecraft:light") -- You can use any item or texture
+    :onLeftClick(function() -- LMB is playing action
+        actionButtonPlay()
+        actions:title(updateActionButtonTitle())
+    end)
+    :onRightClick(function() -- RMB is instantly stop action
+        actionButtonStop()
+        actions:title(updateActionButtonTitle())
+    end)
+    :onScroll(function(dir) -- Scrolling selects an action from a list
+        actionButtonSelect(dir)
+        actions:title(updateActionButtonTitle())
+    end)
+```
